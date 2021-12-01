@@ -1,76 +1,107 @@
-
+import './index.css';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <div>
-       <h1>TODO</h1>
-       <button>Dark/Light</button>
+      <div className="header-img"></div>
+      <div className="titleWrap">
+        <h1>TODO</h1>
+        <div className="theme-toggle" ></div>
       </div>
-     <form>
+     <form id="form"> 
+      <div>
+        <div className='outer-circle'>
+            <div className='circle'></div>
+          </div>
+        </div>
        <input
         type="text"
         id="new-todo-input"
         className="input"
         name="text"
         autoComplete = "off"
+        title="Create a new todo.."
+        placeholder="Create a new todo.."
       />
-
      </form>
-     <div>
-     <ul>
+     
+     <div className="list-container">
+     <ul role="list" className="todo-list" aria-labelledby="list-heading">
        <li className="todo">
+        <div className="circle-box">
+         <div className='outer-circle'>
+            <div className='circle'></div>
+           </div>
+          </div>
         <div className="todo-item">
-         <input id="todo-0" type="checkbox" defaultChecked={true}/>
+  
          <label className="todo-label" htmlFor="todo-0">
            Complete online JS Course
            </label>
-           <button>Delete</button>
        </div>
+       <i class="fas fa-times cross"></i>
        </li>
 
        <li className="todo">
+       
+        <div className="circle-box">
+         <div className='outer-circle'>
+            <div className='circle'></div>
+           </div>
+          </div>
         <div className="todo-item">
-         <input id="todo-1" type="checkbox" defaultChecked={false}/>
          <label className="todo-label" htmlFor="todo-1">
            10 Minutes meditation</label>
-           <button>Delete</button>
+          
        </div>
+       <i class="fas fa-times cross"></i>
        </li>
 
        <li className="todo">
+         <div className="circle-box">
+         <div className='outer-circle'>
+            <div className='circle'></div>
+           </div>
+          </div>
         <div className="todo-item">
-         <input id="todo-2" type="checkbox" defaultChecked={false}/>
          <label className="todo-label" htmlFor="todo-1">
            Read for 1 hour</label>
-           <button>Delete</button>
        </div>
+       <i class="fas fa-times cross"></i>
        </li>
      </ul>
 
-      <div> 
-        <h3 id="list-heading">
-       5 items left
-      </h3>
-      <button className="btn toggle-btn" aria-pressed="true">
+      <div className="footer "> 
+        <div className="items-left">
+        <h3 id="list-heading">5 items left</h3>
+        </div> 
+      <div className="btn-desktop">
+       <button className="btn toggle-btn" type="button" aria-pressed="true">
         <span>All</span>
-      </button>
-      <button className="btn toggle-btn" aria-pressed="false">
+       </button>
+       <button className="btn toggle-btn" type="button" aria-pressed="false">
         <span>Active</span>
       </button>
-      <button className="btn toggle-btn" aria-pressed="false">
+       <button className="btn toggle-btn" type="button" aria-pressed="false">
         <span>Complete</span>
-      </button>
-      <button className="btn" aria-pressed="false">
+       </button>
+       </div> 
+       
+      <div className="btn-right">
+      <button className="btn" type="button" aria-pressed="false">
         <span>Clear Completed</span>
-      </button>
-
-
+       </button>
       </div>
       </div>
-      <h5>Drag and drop to reorder list</h5>
-
+     
+      </div>
+      <div className='btn-mobile'>
+          <button >All</button>
+          <button >Active</button>
+          <button>Completed</button>
+        </div>
+      <h5>Drag and Drop to Reorder List</h5>
     </div>
   );
 }
