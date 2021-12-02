@@ -196,7 +196,18 @@ button:hover {
   cursor: pointer;
 }
 
+.cross:hover ~ div .outer-circle {
+  background-image: linear-gradient(
+    to bottom right,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+}
 
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
 
 
 .list-container {

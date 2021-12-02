@@ -1,5 +1,6 @@
 import './index.css';
 import './App.css';
+import Todo from "./components/Todo";
 
 function App() {
   return (
@@ -28,48 +29,9 @@ function App() {
      
      <div className="list-container">
      <ul role="list" className="todo-list" aria-labelledby="list-heading">
-       <li className="todo">
-        <div className="circle-box">
-         <div className='outer-circle'>
-            <div className='circle'></div>
-           </div>
-          </div>
-        <div className="todo-item">
-  
-         <label className="todo-label" htmlFor="todo-0">
-           Complete online JS Course
-           </label>
-       </div>
-       <i class="fas fa-times cross"></i>
-       </li>
-
-       <li className="todo">
-       
-        <div className="circle-box">
-         <div className='outer-circle'>
-            <div className='circle'></div>
-           </div>
-          </div>
-        <div className="todo-item">
-         <label className="todo-label" htmlFor="todo-1">
-           10 Minutes meditation</label>
-          
-       </div>
-       <i class="fas fa-times cross"></i>
-       </li>
-
-       <li className="todo">
-         <div className="circle-box">
-         <div className='outer-circle'>
-            <div className='circle'></div>
-           </div>
-          </div>
-        <div className="todo-item">
-         <label className="todo-label" htmlFor="todo-1">
-           Read for 1 hour</label>
-       </div>
-       <i class="fas fa-times cross"></i>
-       </li>
+      <Todo name="Exercise"/>
+      <Todo name="10 mininute Yoga"/>
+      <Todo name="Read for 1 hour"/>
      </ul>
 
       <div className="footer "> 
