@@ -1,8 +1,25 @@
 import './index.css';
 import './App.css';
+import Form from "./components/Form";
+import FilterButton from "./components/FilterButton";
 import Todo from "./components/Todo";
 
-function App() {
+function App(props) {
+  const taskList = props.tasks.map(task =>
+    <Todo 
+    id={task.id} 
+    name={task.name} 
+    completed={task.completed} 
+    key={task.id}
+    />
+    );
+
+  function addTask(name) {
+    alert(name);
+  }
+  
+  
+  
   return (
     <div className="App">
       <div className="header-img"></div>
@@ -10,28 +27,11 @@ function App() {
         <h1>TODO</h1>
         <div className="theme-toggle" ></div>
       </div>
-     <form id="form"> 
-      <div>
-        <div className='outer-circle'>
-            <div className='circle'></div>
-          </div>
-        </div>
-       <input
-        type="text"
-        id="new-todo-input"
-        className="input"
-        name="text"
-        autoComplete = "off"
-        title="Create a new todo.."
-        placeholder="Create a new todo.."
-      />
-     </form>
+     <Form addTask={addTask}/>
      
      <div className="list-container">
      <ul role="list" className="todo-list" aria-labelledby="list-heading">
-      <Todo name="Exercise"/>
-      <Todo name="10 mininute Yoga"/>
-      <Todo name="Read for 1 hour"/>
+      {taskList}
      </ul>
 
       <div className="footer "> 
@@ -39,15 +39,9 @@ function App() {
         <h3 id="list-heading">5 items left</h3>
         </div> 
       <div className="btn-desktop">
-       <button className="btn toggle-btn" type="button" aria-pressed="true">
-        <span>All</span>
-       </button>
-       <button className="btn toggle-btn" type="button" aria-pressed="false">
-        <span>Active</span>
-      </button>
-       <button className="btn toggle-btn" type="button" aria-pressed="false">
-        <span>Complete</span>
-       </button>
+       <FilterButton name="All"/>
+       <FilterButton name="Active"/>
+       <FilterButton name="Complte"/>
        </div> 
        
       <div className="btn-right">
@@ -59,9 +53,9 @@ function App() {
      
       </div>
       <div className='btn-mobile'>
-          <button >All</button>
-          <button >Active</button>
-          <button>Completed</button>
+        <FilterButton name="All"/>
+        <FilterButton name="Active"/>
+        <FilterButton name="Complte"/>
         </div>
       <h5>Drag and Drop to Reorder List</h5>
     </div>

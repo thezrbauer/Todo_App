@@ -155,53 +155,8 @@ button:hover {
 
 
 
-.outer-circle {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background-color: var(--very-light-gray);
-  border: var(--very-light-Grayish-Blue) 1px solid;
-}
-
-.outer-circle:hover {
-  background-image: linear-gradient(
-    to bottom right,
-    var(--bg-teal),
-    var(--bg-pink)
-  );
-  cursor: pointer;
-}
-
-.circle {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background-color: var(--todo-bg-color);
-  border: 1px solid var(--border-color);
-}
-
- .circle.tick-mark {
-  background-image: url('images/icon-check.svg'),
-    linear-gradient(to bottom right,  var(--bg-teal), var(--bg-pink));
-  background-repeat: no-repeat;
-  background-position: center;
-
- }
-
- 
-
-
-.circle:hover,
-.cross:hover {
-  cursor: pointer;
-}
-
-.cross:hover ~ div .outer-circle {
-  background-image: linear-gradient(
-    to bottom right,
-    hsl(192, 100%, 67%),
-    hsl(280, 87%, 65%)
-  );
+.add-btn {
+  padding:1rem;
 }
 
 .completed {
