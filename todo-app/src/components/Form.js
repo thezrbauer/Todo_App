@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useState } from "react";
+
 
 
 
 function Form(props) {
 
-    function handleSubmit(e) {
-       e.preventDefault();
-        props.addTask("Say Hello!");
+  const [name, setName] = useState('');
+
+  function handleChange(e) {
+    setName(e.target.value);
+  }
+  function handleSubmit(e) {
+      e.preventDefault();
+      props.addTask(name);
+      setName("");
       }
       
     return (
@@ -23,12 +30,12 @@ function Form(props) {
         className="input"
         name="text"
         autoComplete = "off"
+        value={name}
+        onChange={handleChange}
         title="Create a new todo.."
         placeholder="Create a new todo.."
       />
-      <button type="submit" className="btn add-btn">
-        Add
-      </button>
+     
      </form>
     
     );
