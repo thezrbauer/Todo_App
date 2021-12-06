@@ -58,8 +58,9 @@ export default function Todo(props) {
     </form>
   );
   
-  const viewTemplate = ( <li className="todo">
-  <div className="round">
+  const viewTemplate = ( 
+  <li className="todo">
+  <div className="todo-input">
   <input 
   id={props.id} 
   type="checkbox"  
@@ -72,6 +73,7 @@ export default function Todo(props) {
   {props.name}</label>
  
 </div>
+<div className="todo-btn-box">
 <button type="button" className="btn" onClick={() => setEditing(true)} ref={editButtonRef}>
   Edit <span className="dlt-btn">{props.name}</span>
 </button>
@@ -83,6 +85,7 @@ export default function Todo(props) {
  >
    Delete <span className="dlt-btn">{props.name}</span>
  </button>
+ </div>
 </li>
   );
 

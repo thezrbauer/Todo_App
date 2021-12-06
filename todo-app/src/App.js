@@ -19,6 +19,15 @@ const FILTER_NAMES = Object.keys(FILTER_MAP);
 function App(props) {
   const [tasks, setTasks] = useState(props.tasks);
   const [filter, setFilter] = useState('All');
+  const [theme, setTheme] = useState('light')
+
+  const toggleTheme = () => {
+    const tm = theme === 'light' ? 'dark' : 'light'
+    setTheme(tm)
+    document.documentElement.setAttribute('data-theme', tm)
+    console.log(tm)
+  }
+
 
   function toggleTaskCompleted(id) {
     const updatedTasks = tasks.map(task => {
@@ -89,7 +98,7 @@ function App(props) {
       <div className="header-img"></div>
       <div className="titleWrap">
         <h1>TODO</h1>
-        <div className="theme-toggle" ></div>
+        <div className="theme-toggle" onClick={toggleTheme}></div>
       </div>
      <Form addTask={addTask}/>
      
