@@ -74,17 +74,17 @@ export default function Todo(props) {
  
 </div>
 <div className="todo-btn-box">
-<button type="button" className="btn" onClick={() => setEditing(true)} ref={editButtonRef}>
+{/* <button type="button" className="btn" onClick={() => setEditing(true)} ref={editButtonRef}>
   Edit <span className="dlt-btn">{props.name}</span>
-</button>
+</button> */}
 
-<button
+<div
    type="button"
-   className="btn btn__danger"
+   className="cross"
    onClick={() => props.deleteTask(props.id)}
  >
-   Delete <span className="dlt-btn">{props.name}</span>
- </button>
+    <span className="dlt-btn">{props.name}</span>
+ </div>
  </div>
 </li>
   );

@@ -19,10 +19,12 @@ function Form(props) {
     return (
        <form onSubmit={handleSubmit} id="form"> 
        <div className="container">
+        
          <div className="round">
-         <input type="checkbox"   />
-         <label htmlFor="checkbox"></label>
+           <input type="checkbox"/>
+          <label htmlFor="checkbox"/>
         </div>
+      
         </div>
        <input
         type="text"
